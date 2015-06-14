@@ -1,0 +1,54 @@
+/**** This is the test input file for CS411-Project 1 ****
+*                                                        *
+*                                                        *
+*                                                        *
+**********************************************************/
+
+///////////////////////////////////////////////////////////
+class Test extends Tester, implements WhiteBoxTest {
+	void main(string[] args) {
+		string String = "This is a string";
+		int Int = 0xabc145fff;
+		double Double = 000123.e123;
+		boolean Boolean = true;
+		int x = 0101;
+		double y = 0.123e-5;
+		string s = "";
+		s = readln();
+		println(s + "= This is the input string");
+		s = reverse(s);
+		
+		int[] intArray = newarray[10];
+		int i = 0;
+		while(i < 10) {
+			intArray[i] = i++;
+		}
+			
+		string _system_exit_code = $;
+		int system_exit = -1;
+		if(system_exit == -1){
+			System.exit(system_exit);
+		} else{
+			System.exit(0);
+		}
+		
+	}
+///////////////////////////////////////////////////////////
+	string reverse(string input) {
+		string result = "";
+		for(int i = input.length() - 1; i >= 0; i--){
+			result += input.charAt(i);
+		}
+		return result;
+	}
+///////////////////////////////////////////////////////////
+	void int findMax(int[] array) {
+		int max = array[0];
+		for(int i = 1; i < array.length; i++) {
+			if(array[i] > max)
+				max = array[i];
+		}
+		return max;
+	}
+//////////////////////////////////////////////////////////
+}
