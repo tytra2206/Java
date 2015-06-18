@@ -32,7 +32,7 @@ public class Main {
 					list.reverseIterative();
 					break;
 				case 6:
-					list.removeDupsHash();
+					list.removeDupHash();
 					break;
 				case 7:
 					scanner.close();

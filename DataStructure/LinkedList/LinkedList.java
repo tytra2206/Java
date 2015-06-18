@@ -23,41 +23,6 @@ public class LinkedList {
 		}
 		nItems++;
 	}
-
-	public void removeDups() {
-		if(head == null || head.next == null)
-			return;
-
-		Node cur = head;
-		while(cur != null) {
-			Node runner = cur;
-			while(runner.next != null){
-				if(runner.next.data == cur.data){
-					runner.next = runner.next.next;
-				}else{
-					runner = runner.next;
-				}
-			}
-			cur = cur.next;
-		}
-	}
-
-	public void removeDupsHash() {
-		if(head == null || head.next == null)
-			return;
-		Node cur = head;
-		Node pre = null;
-		Hashtable<Integer, Boolean> table = new Hashtable<Integer, Boolean>();
-		while(cur != null) {
-			if(table.containsKey(cur.data)){
-				pre.next = cur.next;
-			}else{
-				table.put(cur.data, true);
-				pre = cur;
-			}
-			cur = cur.next;
-		}
-	}
 	
 	public void addTail(int item) {
 		Node node = new Node(item, null);
@@ -79,6 +44,44 @@ public class LinkedList {
 			cur = cur.next;
 		}
 		System.out.println();
+	}
+
+	public void removeDups() {
+		if(head == null || head.next == null)
+			return;
+
+		Node cur = head;
+		while(cur != null) {
+			Node runner = cur;
+			while(runner.next != null) {
+				if(runner.next.data == cur.data) {
+					runner.next = runner.next.next;
+					nItems--;
+				} else {
+					runner = runner.next;
+				}
+			}
+			cur = cur.next;
+		}
+	}
+
+	public void removeDupHash() {
+		if(head == null || head.next == null)
+			return;
+
+		Node cur = head;
+		Node pre = null;
+		Hashtable<Integer, Boolean> table = new Hashtable<Integer, Boolean>();
+		while(cur != null) {
+			if(table.containsKey(cur.data)) {
+				pre.next = cur.next;
+				nItems--;
+			}else {
+				table.put(cur.data, true);
+				pre = cur;
+			}
+			cur = cur.next;
+		}
 	}
 	
 	public Node removeHead() {

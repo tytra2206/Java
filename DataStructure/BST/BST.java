@@ -1,10 +1,8 @@
-<<<<<<< HEAD
+
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;
 
-=======
->>>>>>> 93caa9e1361f9fa67197c4900497819a7ec28c83
 class BST {
 	private Node root;
 
@@ -14,11 +12,7 @@ class BST {
 
 	public void add(int item) {
 		Node newNode = new Node(item);
-<<<<<<< HEAD
-		if(root == null) {
-=======
 		if(root == null){
->>>>>>> 93caa9e1361f9fa67197c4900497819a7ec28c83
 			root = newNode;
 			return;
 		}
@@ -28,7 +22,6 @@ class BST {
 		boolean isLeft = false;
 		while(cur != null) {
 			parent = cur;
-<<<<<<< HEAD
 			if(item > cur.data) {
 				cur = cur.right;
 				isLeft = false;
@@ -38,17 +31,6 @@ class BST {
 			}
 			else
 				return;
-=======
-			if(item > cur.data){
-				cur = cur.right;
-				isLeft = false;
-			} else if(item < cur.data) {
-				cur = cur.left;
-				isLeft = true;
-			} else {
-				return;
-			}
->>>>>>> 93caa9e1361f9fa67197c4900497819a7ec28c83
 		}
 
 		if(isLeft)
@@ -57,7 +39,6 @@ class BST {
 			parent.right = newNode;
 	}
 
-<<<<<<< HEAD
 	public void remove(int key) {
 		if(root == null)
 			return;
@@ -155,15 +136,12 @@ class BST {
 		return false;
 	}
 
-=======
->>>>>>> 93caa9e1361f9fa67197c4900497819a7ec28c83
 	public void inorderTraverse() {
 		Node cur = root;
 		traverse(cur);
 		System.out.println();
 	}
 
-<<<<<<< HEAD
 	public void bfs() {
 		if(root == null)
 			return;
@@ -198,8 +176,6 @@ class BST {
 		System.out.println();
 	}
 
-=======
->>>>>>> 93caa9e1361f9fa67197c4900497819a7ec28c83
 	private void traverse(Node cur) {
 		if(cur == null)
 			return;
