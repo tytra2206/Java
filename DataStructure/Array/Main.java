@@ -8,7 +8,7 @@ class Main {
 		for(int i = 0; i < array.length; i++) {
 			array[i] = Integer.valueOf(args[i]);
 		}
-		findTwoSumUnSortedRotated(9);
+		System.out.println(findOccuranceSorted(10, true));
 	}
 
 	//Find largest pair in an unsorted array.
@@ -144,6 +144,33 @@ class Main {
 				left = (array.length + left - 1)% array.length;
 		}
 
+	}
+
+	//Find first or last occurance of a number in an sorted array.
+	public static int findOccuranceSorted(int target, boolean first) {
+		if(array == null || array.length == 0)
+			return -1;
+
+		int result = -1;
+		int low = 0;
+		int high = array.length - 1;
+		while(low <= high) {
+			int mid = low + (high - low)/2;
+			if(array[mid] == target){
+				result = mid;
+				if(first){
+					high = mid - 1;
+				}
+				else {
+					low = mid + 1;
+				}
+			}
+			else if(target > array[mid])
+				low = mid + 1;
+			else
+				high = mid - 1;
+		}
+		return result;
 	}
 
 	//Print array.

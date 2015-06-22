@@ -23,6 +23,33 @@ public class LinkedList {
 		}
 		nItems++;
 	}
+
+	public static LinkedList addLists(LinkedList a, LinkedList b) {
+		if(a == null || b == null)
+			return null;
+
+		LinkedList result = new LinkedList();
+		Node listA = a.getHead();
+		Node listB = b.getHead();
+		int sum = 0;
+		while(listA != null || listB != null) {
+			if(listA != null){
+				sum += listA.data;
+				listA = listA.next;
+			}
+			if(listB != null) {
+				sum += listB.data;
+				listB = listB.next;
+			}
+
+			result.addTail(sum%10);
+			sum = sum/10;
+		}
+		if(sum > 0)
+			result.addTail(sum);
+
+		return result;
+	}
 	
 	public void addTail(int item) {
 		Node node = new Node(item, null);

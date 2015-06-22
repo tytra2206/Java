@@ -2,6 +2,19 @@ import java.util.Scanner;
 
 public class Main {
 	public static void main(String[] args) throws Exception{
+		LinkedList listA = new LinkedList();
+		listA.addTail(9);
+		listA.addTail(9);
+		listA.addTail(9);
+		LinkedList listB = new LinkedList();
+		listB.addTail(8);
+		listB.addTail(8);
+		listB.addTail(8);
+		listB.addTail(8);
+
+		LinkedList result = LinkedList.addLists(listA, listB);
+		result.print();
+		/*
 		Scanner scanner = new Scanner(System.in);
 		LinkedList list = new LinkedList();
 		while(true) {
@@ -43,5 +56,6 @@ public class Main {
 					break;
 			}
 		}
+		*/
 	}
 }
